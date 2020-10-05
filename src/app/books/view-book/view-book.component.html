@@ -1,0 +1,14 @@
+<div class="card" style="width:25.1rem;">
+    <img class="card-img-top" src="{{bookDetails.image}}" alt="" style="width:400px;height:400px;">
+    <div class="card-body">
+    <h3 class="card-title">{{bookDetails.bookName}}</h3>
+    <h4>{{bookDetails.quantity}} copies are available</h4>
+    <p class="card-text">{{bookDetails.description}}</p>
+<form (submit)="BorrowBook(BorrowBookForm)" #BorrowBookForm="ngForm" >
+       <input type="hidden" class="form-control" [(ngModel)]="bookDetails._id" required name="book_id" ngModel>
+      <input type="hidden" class="form-control" [(ngModel)]="bookDetails.image" required name="image" ngModel>
+      
+     <button class="btn btn-primary" type="submit" >Borrow Book</button>
+</form>
+</div>
+        <!-- /.card -->

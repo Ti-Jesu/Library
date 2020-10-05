@@ -1,0 +1,21 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Book Id</th>
+      <th scope="col">Borrower's Name</th>
+      <th scope="col">Click For Returned Books</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor = 'let book of Borrowed'>
+      <th scope="row">-</th>
+      <td> {{book.bookId}}  </td>
+      <td>  {{book.userName}} </td>
+      <td > Click </td>
+      
+      
+      
+    </tr>
+  </tbody>
+</table>

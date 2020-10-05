@@ -1,0 +1,52 @@
+<h2 class="bg-light mb-2">Add New Book</h2>
+<form (submit)="addNewBook(addBookForm)" #addBookForm="ngForm" >
+    <div class="form-row">
+      <div class="col-md-6 mb-3">
+        <label for="validationServer01">Book Title</label>
+        <input type="text" class="form-control" value="Enter Book Name" required name="book_name" ngModel>
+      </div>
+      <div class="col-md-6 mb-3">
+        <label for="validationServer02">Category Id</label>
+        
+         <select class="custom-select" required name="book_categoryId" ngModel>
+          <option value="{{cat._id}}" *ngFor= "let cat of categoryList">{{cat.categoryName}}</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="col-md-6 mb-3">
+        <label for="validationServer03">Author</label>
+        <input type="text" class="form-control" value="Enter Book Name" required name="book_author" ngModel>
+      </div>
+      <div class="col-md-6 mb-3">
+        <label for="validationServer04">Quantity</label>
+        <input type="text" class="form-control" required name="book_quantity" ngModel>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="col-md-6 mb-3">
+        <label for="validationServer05">Description</label>
+        <textarea type="text" class="form-control" placeholder="Enter Book Description" required name="book_description" ngModel >
+        </textarea>
+      </div>
+      <div class="col-md-6 mb-3">
+        <label>Rating</label>
+        <select class="custom-select" required name="book_rating" ngModel>
+          <option selected value="">Choose...</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+      </div>
+    </div> 
+     
+<div class="col-md-6 mb-3">
+        <label for="validationServer03">Image path</label>
+        <input type="text" class="form-control" value="Enter Image path" required name="image" ngModel>
+      </div>
+  <button class="btn btn-primary" type="submit">Submit form</button>
+</form>

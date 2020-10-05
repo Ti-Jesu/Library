@@ -1,0 +1,8 @@
+<a href="" class="list-group-item" style="background-color: beige">
+  View all Books
+</a>
+<div class="list-group" *ngFor="let cat of categoryList">
+  <a href="category/{{ cat._id }}" class="list-group-item">
+    {{ cat.categoryName }}
+  </a>
+</div>

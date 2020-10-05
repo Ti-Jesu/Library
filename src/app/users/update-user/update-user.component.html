@@ -1,0 +1,54 @@
+<h2 class=""  style="color:#3FB6FA">Update user</h2>
+<form (submit)="updateUser(updateUserForm)" #updateUserForm="ngForm">
+  <div class="form-row">
+    <div class="col-md-6 mb-3">
+      <label for="validationServer01">First Name</label>
+      <input
+        type="text"
+        class="form-control"
+        [(ngModel)]="userDetails.firstname"
+        required
+        name="first_name"
+        ngModel
+      />
+    </div>
+    <div class="col-md-6 mb-3">
+      <label for="validationServer02">Last Name</label>
+      <input
+        type="text"
+        class="form-control"
+        [(ngModel)]="userDetails.lastname"
+        required
+        name="last_name"
+        ngModel
+      />
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="col-md-6 mb-3">
+      <label for="validationServer03"> Password </label>
+      <input
+        type="text"
+        class="form-control"
+        [(ngModel)]="userDetails.password"
+        required
+        name="user_password"
+        ngModel
+      />
+    </div>
+    <div class="col-md-6 mb-3">
+      <label for="validationServer04">email</label>
+      <input
+        type="text"
+        class="form-control"
+        [(ngModel)]="userDetails.email"
+        required
+        name="user_email"
+        ngModel
+      />
+    </div>
+  </div>
+
+  <button class="btn btn-primary" type="submit">Update form</button>
+</form>

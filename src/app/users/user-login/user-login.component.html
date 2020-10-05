@@ -1,0 +1,28 @@
+<h2 class="" style="color:#3FB6FA  ">User Login </h2>
+<form (submit)="loginUser(loginUserForm)" #loginUserForm="ngForm">
+  <div class="form-group">
+    <div class="col-md-6 mb-3">
+      <label for="validationServer04">Email</label>
+      <input type="text" class="form-control" required name="email" ngModel />
+    </div>
+
+    <div class="col-md-6 mb-3">
+      <label for="validationServer03">Password</label>
+      <input
+        type="text"
+        class="form-control"
+        value="Enter Password"
+        required
+        name="password"
+        ngModel
+      />
+    </div>
+  </div>
+
+  <button class="btn btn-primary" type="submit">Login</button>
+  
+</form>
+<br>
+<br>
+<br>
+<a class="text-center" (click) = "goToPage ('admin/admin-login')"  > Admin Login </a>

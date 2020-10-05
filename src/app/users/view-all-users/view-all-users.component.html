@@ -1,0 +1,29 @@
+<h2 style="color:#3FB6FA">All Users</h2>
+<table class="table">
+  <thead class=" ">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Update</th>
+      <th scope="col">Delete</th>
+      <th scope="col">First Name</th>
+      <th scope="col">Last Name</th>
+      <th scope="col">E-mail</th>
+      <th scope="col">Password</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of userList">
+      <th scope="row">- </th>
+      <td>
+        <a routerLink= "update-user/{{ user._id }}">  Update </a>
+      </td>
+      <td>
+        <a  routerLink="delete-user/{{ user._id }}">Delete </a>
+      </td>
+      <td>{{ user.firstname }}</td>
+      <td>{{ user.lastname }}</td>
+      <td>{{ user.email }}</td>
+      <td>{{ user.password }}</td>
+    </tr>
+  </tbody>
+</table>

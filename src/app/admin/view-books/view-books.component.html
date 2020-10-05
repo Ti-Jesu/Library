@@ -1,0 +1,21 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">update Book</th>
+      <th scope="col">Delete Book</th>
+      <th scope="col">Book Name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor = 'let book of BookList'>
+      <th scope="row">-</th>
+      <td> <a href ="update-book/{{book._id}} "> update </a> </td>
+      <td> <a routerLink ="delete-book/{{book._id}} "> delete </a> </td>
+      <td > {{book.bookName}} </td>
+      
+      
+      
+    </tr>
+  </tbody>
+</table>

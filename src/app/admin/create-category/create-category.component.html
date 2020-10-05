@@ -1,0 +1,18 @@
+<h2 class="" style="color:#3FB6FA ">Create Category Name</h2>
+<form (submit)="createCategory(categoryForm)" #categoryForm="ngForm">
+  <div class="form-group">
+    <div class="col-md-6 mb-3">
+      <label for="validationServer03">input a new Category</label>
+      <input
+        type="text"
+        class="form-control"
+        value="Enter Category"
+        required
+        name="category_name"
+        ngModel
+      />
+    </div>
+  </div>
+
+  <button class="btn btn-primary" type="submit">submit</button>
+</form>
