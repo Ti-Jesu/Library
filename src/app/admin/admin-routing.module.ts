@@ -1,3 +1,5 @@
+import { ViewBorrowedBooksComponent } from './../books/view-borrowed-books/view-borrowed-books.component';
+import { AdminGuardGuard } from './../admin-guard.guard';
 import { ViewAllUsersComponent } from './../users/view-all-users/view-all-users.component';
 import { ViewBooksComponent } from './view-books/view-books.component';
 import { ViewBooksByCategoryComponent } from './../books/view-books-by-category/view-books-by-category.component';
@@ -18,20 +20,22 @@ import { Routes, RouterModule } from '@angular/router';
 import { AdminComponent } from './admin.component';
 
 const routes: Routes = [
-  { path: '', component: AdminComponent },
-  { path: 'view-books', component: ViewBooksComponent },
-  { path: 'create-book', component: CreateBookComponent },
-  { path: 'view-books/delete-book/:id', component: DeleteBookComponent },
-  { path: 'view-books/update-book/:id', component: UpdateBookComponent },
-  { path: 'category/:id', component: ViewAllBooksComponent },
-  { path: 'category/:id/book/:id', component: ViewBookComponent },
-  { path: 'book/:id', component: ViewBookComponent },
-  { path: 'create-user', component: CreateUserComponent },
-  { path: 'view-users', component: ViewAllUsersComponent },
-  { path: 'view-users/delete-user/:id', component: DeleteUserComponent },
-  { path: 'view-users/update-user/:id', component: UpdateUserComponent },
-  { path: 'create-category', component: CreateCategoryComponent },
+  { path: '', component: AdminComponent, canActivate:[AdminGuardGuard] },
+  //{ path: 'view-books', component: ViewBooksComponent },
+  { path: 'create-book', component: CreateBookComponent,canActivate:[AdminGuardGuard] },
+  { path: 'view-books/delete-book/:id', component: DeleteBookComponent,canActivate:[AdminGuardGuard] },
+  { path: 'view-books/update-book/:id', component: UpdateBookComponent,canActivate:[AdminGuardGuard] },
+  { path: 'category/:id', component: ViewAllBooksComponent,canActivate:[AdminGuardGuard] },
+  { path: 'category/:id/book/:id', component: ViewBookComponent,canActivate:[AdminGuardGuard] },
+  { path: 'book/:id', component: ViewBookComponent,canActivate:[AdminGuardGuard] },
+  {path: 'view-books', component:ViewBooksComponent, canActivate:[AdminGuardGuard] },
+  { path: 'create-user', component: CreateUserComponent,canActivate:[AdminGuardGuard] },
+  { path: 'view-users', component: ViewAllUsersComponent,canActivate:[AdminGuardGuard] },
+  { path: 'view-users/delete-user/:id', component: DeleteUserComponent,canActivate:[AdminGuardGuard] },
+  { path: 'view-users/update-user/:id', component: UpdateUserComponent,canActivate:[AdminGuardGuard] },
+  { path: 'create-category', component: CreateCategoryComponent,canActivate:[AdminGuardGuard] },
   { path: 'admin-login', component: AdminLoginComponent },
+  { path: 'borrowed-books', component: ViewBorrowedBooksComponent, canActivate: [AdminGuardGuard] }
 ];
 
 @NgModule({

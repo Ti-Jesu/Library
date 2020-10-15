@@ -14,8 +14,9 @@ import { SiteFrameworkModule } from './site-framework/site-framework.module';
 
 import { NotificationService } from './notification.service';
 import { HttpClientModule } from '@angular/common/http';
+import { ColorPipe } from './color.pipe';
 @NgModule({
-  declarations: [AppComponent, NotificationListComponent],
+  declarations: [AppComponent, NotificationListComponent, ColorPipe],
   imports: [
     BrowserModule,
     AppRoutingModule,
