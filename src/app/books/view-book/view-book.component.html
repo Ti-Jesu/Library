@@ -2,6 +2,7 @@
     <img class="card-img-top" src="{{bookDetails.image}}" alt="" style="width:400px;height:400px;">
     <div class="card-body">
     <h3 class="card-title">{{bookDetails.bookName}}</h3>
+    <h5 class="card-text" >Author:{{bookDetails.author }}</h5>
     <h4>{{bookDetails.quantity}} copies are available</h4>
     <p class="card-text">{{bookDetails.description}}</p>
 <form (submit)="BorrowBook(BorrowBookForm)" #BorrowBookForm="ngForm" >

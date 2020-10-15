@@ -14,7 +14,7 @@ export class AdminLoginComponent implements OnInit {
     private notify: AppComponent,
     private router: Router
   ) { }
-
+   
   ngOnInit(): void { }
   loginAdmin(form) {
     console.log(form.value);
@@ -34,8 +34,10 @@ export class AdminLoginComponent implements OnInit {
           localStorage.setItem('fname', user["firstname"]);
           localStorage.setItem('email', user["email"]);
           localStorage.setItem('lname', user["lastname"]);
+          localStorage.setItem('status', data['status']);
           this.notify.sendSuccess(data['message'], username);
           this.router.navigate([`${'admin'}`])
+          return true;
         } else {
           this.notify.sendError(data['message']);
         }
@@ -46,4 +48,6 @@ export class AdminLoginComponent implements OnInit {
       console.log(data);
     });
   }
+  
+  
 }
